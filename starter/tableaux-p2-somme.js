@@ -18,7 +18,6 @@ Version alternative (avec BONUS) :
 4. Affichez le message final : "… + … + … = …"
 */
 
-// Solution avec la méthode forEach()
 
 const numbers = [11, 3, 7, 2, 9, 10];
 
@@ -28,26 +27,42 @@ numbers.forEach(number =>{
     console.log(number);
 })
 
+console.log("La somme des nombres de mon tableau est …");
 
+// Solution avec la méthode forEach()
 
+let addition = 0;
 
+numbers.forEach(number => {
+    addition += number;
+})
 
-
+console.log(addition);
 
 
 // Solution avec la méthode for/of
 
+addition = 0;
 
-
-
-
-
+for (const number of numbers) {
+    addition += number;
+}
 
 
 // *******************************
 // Solution avec BONUS
 
+let additionSentence = "";
 
+for (let i = 0; i < numbers.length; i++) {
+    if(i === numbers.length-1) {
+        additionSentence += numbers[i];
+    } else {
+        additionSentence += `${numbers[i]} + `;
+    }
+}
+
+console.log(additionSentence.concat(` = ${addition}`));
 
 
 

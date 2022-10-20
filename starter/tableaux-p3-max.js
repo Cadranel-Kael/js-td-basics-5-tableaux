@@ -17,3 +17,19 @@ Aide :
 		elle devient le nouveau maximum
 	- On affiche
 */
+
+const numbers = [3, 11, 7, 2, 9, 10]
+
+for (const number of numbers) {
+    console.log(number)
+}
+
+let biggest = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    if (i === 0 || numbers[i] > biggest) {
+        biggest = numbers[i];
+    }
+}
+
+console.log(`La plus grande valeur de mon tableau est ${biggest}`);

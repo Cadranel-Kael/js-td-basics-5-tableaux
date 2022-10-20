@@ -25,6 +25,33 @@ Par exemple,
 	* le 31 avril 2020 n'est PAS une date valide
 */
 
+const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+function isLeapYear(year) {
+    if (year % 4 === 0) {
+        return true
+    }
+    return year % 100 === 0 && year % 400 === 0;
+}
+
+function isValidDate(day, month, year) {
+    if (month === 2) {
+        if (isLeapYear(year) && day <= 29) {
+            return true;
+        }
+        return !isLeapYear(year) && day <= 28;
+    }
+    return day === months[month - 1];
+}
+
+console.log(isValidDate(31, 1, 2019)); // le 31 janvier 2019 est une date valide
+console.log(isValidDate(28, 2, 2019)); // le 28 février 2019 est une date valide
+console.log(isValidDate(29, 2, 2019)); // le 29 février 2019 n'est PAS une date valide
+console.log(isValidDate(29, 2, 2020)); // le 29 février 2020 est une date valide
+console.log(isValidDate(30, 2, 2020)); // le 30 février 2020 n'est PAS une date valide
+console.log(isValidDate(30, 4, 2020)); // le 30 avril 2020 est une date valide
+console.log(isValidDate(31, 4, 2020)); // le 31 avril 2020 n'est PAS une date valide
+
 
 
 
