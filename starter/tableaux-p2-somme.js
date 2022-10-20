@@ -20,6 +20,13 @@ Version alternative (avec BONUS) :
 
 // Solution avec la méthode forEach()
 
+const numbers = [11, 3, 7, 2, 9, 10];
+
+console.log("Voici mon tableau de nombres :");
+
+numbers.forEach(number =>{
+    console.log(number);
+})
 
 
 
